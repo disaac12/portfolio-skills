@@ -1,6 +1,6 @@
 ---
 name: design-critique
-description: Run a structured design critique on a UI screenshot, Figma frame, or described interface. Covers usability, information hierarchy, consistency, actionability, and edge cases. Use when the user shares a design and wants structured feedback.
+description: Run a structured design critique on a UI screenshot, Figma frame, or described interface. Covers usability, information hierarchy, consistency, actionability, and edge cases. Use this skill proactively whenever someone shares a design, screenshot, or Figma link and asks for feedback — even informal requests like "what do you think?", "how does this look?", "anything wrong here?", "quick thoughts?", or "can you review this?". Also trigger when someone is preparing for a stakeholder review, user research session, or design handoff and wants to sense-check their work before the milestone.
 ---
 
 ## Overview

@@ -1,0 +1,44 @@
+{
+  "skill_name": "risk-assessor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're thinking about adding a feature that automatically generates a plain-English care plan summary using AI, and emails it to family members when a care manager approves it. The idea came from a sales conversation — a large care group said it would help them win contracts. Is this risky?",
+      "expected_output": "A full 8-dimension risk table with Low/Medium/High ratings. Should flag: Data Risk as High (sharing personal/health data externally via email), Clinical Risk as at least Medium (AI-generated clinical summaries could contain errors that mislead families), Rollback Risk as Medium-High (emails already sent can't be unsent), Idea Origin as Medium (sales-led, not validated with care managers or families). Overall risk should be High. Key drivers should include Data Risk and Clinical Risk.",
+      "files": [],
+      "expectations": [
+        "Output includes a table with all 8 risk dimensions rated",
+        "Data Risk is rated High (email of health data = GDPR Art. 9)",
+        "Clinical Risk is rated at least Medium",
+        "Overall risk is rated High",
+        "Key drivers are identified at the end of the assessment"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "What could go wrong if we let care managers bulk-delete historical audit records? They've been asking for a way to clean up old test records from before go-live. It's a simple admin action — just a checkbox list with a delete button. Shouldn't take more than a sprint.",
+      "expected_output": "Risk table flagging: Rollback Risk as High (deleted audit records cannot be recovered; this is a destructive, irreversible action), Data Risk as High (audit records are likely regulated data; deletion may violate retention requirements), Financial/Legal/Reputation as High (destroying records that CQC might request is a serious regulatory risk), Effort as Low-Medium. Overall risk should be High driven by Rollback and Legal dimensions.",
+      "files": [],
+      "expectations": [
+        "Output includes a table with all 8 risk dimensions rated",
+        "Rollback Risk is rated High",
+        "Financial/Legal/Reputation is rated at least Medium, ideally High",
+        "Overall risk is rated High",
+        "Assessment mentions data retention or regulatory records as a concern"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "We want to surface medication reminders on the main dashboard for care workers — just a banner that shows if any residents have scheduled medications due in the next 2 hours that haven't been marked as administered. It came from user feedback. We'd pull the data from the existing medication records. Should we be worried about anything?",
+      "expected_output": "Risk table flagging Clinical Risk as High (missed or incorrect medication alerts could directly affect patient safety — this is a veto dimension), Data Risk as High (medication records are special category health data), Rollback Risk as Medium (if alerts are wrong, care workers may act on bad information before the feature is rolled back), Idea Origin as Low (validated user feedback). Overall risk = High due to Clinical Risk veto.",
+      "files": [],
+      "expectations": [
+        "Output includes a table with all 8 risk dimensions rated",
+        "Clinical Risk is rated High",
+        "Overall risk is rated High (clinical veto triggered)",
+        "Assessment mentions the clinical veto rule explicitly",
+        "Assessment mentions data accuracy or false positive/negative risk"
+      ]
+    }
+  ]
+}

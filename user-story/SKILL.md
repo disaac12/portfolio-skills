@@ -1,6 +1,6 @@
 ---
 name: user-story
-description: Creates development-ready user stories in a structured template for healthcare product work.
+description: Creates development-ready user stories in a structured template for healthcare product work. Use this skill whenever someone asks for a user story, a Jira ticket, acceptance criteria, or a story writeup — even informal requests like "can you write this up as a ticket?", "give me the AC for this", "write a story for X feature", "I need a dev-ready ticket", or "turn this into a story". Also trigger when someone describes a feature or requirement and needs it turned into a structured deliverable with background, problem, solution, acceptance criteria, and QA scenarios.
 ---
 
 ## Story Structure

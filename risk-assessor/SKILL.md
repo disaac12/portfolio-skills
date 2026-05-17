@@ -1,6 +1,6 @@
 ---
 name: risk-assessor
-description: Scores a product initiative across 8 risk dimensions (Idea Origin, Market, Effort, Rollback, Data, Financial/Legal/Reputation, Clinical, Customer Change) to produce an overall risk level. Clinical Risk is a veto dimension. Trigger on: 'is this risky?', 'what could go wrong?', 'I'm worried about the clinical impact', 'this touches care records', 'could this affect compliance?', 'how hard would it be to roll back?', 'is this a big change for customers?', 'could we get in trouble if this goes wrong?', 'rate the risk', 'clinical risk', 'risk assessment', 'rollback'. Don't wait for someone to explicitly ask for a risk score — if they're describing a feature and risk is relevant, run this.
+description: Scores a product initiative across 8 risk dimensions (Idea Origin, Market, Effort, Rollback, Data, Financial/Legal/Reputation, Clinical, Customer Change) to produce an overall risk level. Clinical Risk is a veto dimension. Trigger proactively — don't wait for an explicit risk score request. Use this skill whenever someone says things like 'is this risky?', 'what could go wrong?', 'I'm worried about the clinical impact', 'this touches patient data or care records', 'could this affect compliance?', 'how hard would it be to roll back?', 'is this a big change for customers?', 'could we get in trouble if this goes wrong?', 'rate the risk', 'risk assessment', or 'rollback'. If someone is describing a new feature and risk is clearly relevant, run this without being asked.
 ---
 
 # Risk Assessor
@@ -34,6 +34,7 @@ Quick reference:
 2. **Clinical Risk is a veto dimension.** If Clinical Risk = High, overall risk = High regardless of all other scores.
 3. Overall risk = highest score across all 8 dimensions.
 4. Flag every dimension rated High — these drive the discovery approach and must be addressed before committing to build.
+5. **Never soften the overall conclusion.** If the score is High, state "Overall risk: High" explicitly. Do not substitute hedged language like "the risks are manageable" or "proceed with care" — these obscure the actual verdict and can lead teams to under-invest in validation or clinical safety work.
 
 ## Output: Risk Score
 

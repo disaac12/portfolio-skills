@@ -1,0 +1,42 @@
+{
+  "skill_name": "design-critique",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here's our new quality gaps dashboard for care managers. It shows a table of flagged issues across all services, with columns for service name, gap category, severity (high/medium/low), date raised, and assigned action. There's a date range filter at the top and a search bar. Can you give me feedback before we go into user research next week?",
+      "expected_output": "A structured critique covering: what works, critical issues, usability issues, consistency/system fit, data/edge cases, and research questions. Should call out missing states (empty, loading, error), question whether the date filter actually controls the visible data, flag the severity column ordering, and end with a clear priority fixes list tied to the upcoming research milestone.",
+      "files": [],
+      "expectations": [
+        "Critique includes a 'What's working' section with at least one genuine strength",
+        "Critique calls out at least one missing state (empty, error, or loading)",
+        "Critique ends with a Priority fixes summary",
+        "Priority fixes are explicitly tied to a named milestone (research session, handoff, or similar)",
+        "Critique covers at least 3 of the 5 lenses (working, critical, usability, consistency, data/edge cases)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Quick thoughts on this filter panel? It slides out from the right when a care manager clicks 'Filter' on the audit tracker. It has checkboxes for audit type (Self-assessment, External, Mock), a date range picker with two separate calendar inputs, and a multi-select dropdown for service. There's an Apply button at the bottom and an X to close. The panel is 320px wide.",
+      "expected_output": "Targeted critique of the filter panel interaction design, covering: whether the panel pattern is appropriate, potential issues with the dual-calendar date range input, the placement of the Apply button, whether the X is clear enough, and what happens to filtered data when the panel closes. Should ask about empty/zero-result states and what 'Apply' does if no filters are changed.",
+      "files": [],
+      "expectations": [
+        "Critique is specific to the described UI pattern (slide-out panel) not generic",
+        "Critique mentions at least one concern about the interaction flow (applying, closing, or clearing filters)",
+        "Critique mentions the date range input as a potential usability risk",
+        "Critique includes a Priority fixes section"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I'm about to hand this off to dev — can you do a final check? It's the empty state screen for when a care manager has logged in but their account hasn't been set up with any services yet. The design shows a large illustration, the heading 'No services yet', and a short line of body copy saying 'Contact your administrator to get started.' There's no button or further action.",
+      "expected_output": "A critique that flags the dead-end nature of the empty state (no action for the user to take), questions whether the illustration adds value, checks the copy for clarity (what is 'get started'?), and asks what happens next — does the admin get notified? Is there a different flow for self-service setup? Should include a priority fix about adding a contact mechanism or at minimum an email address.",
+      "files": [],
+      "expectations": [
+        "Critique identifies the missing call-to-action or escape hatch as a critical or usability issue",
+        "Critique questions the specificity of the body copy ('Contact your administrator')",
+        "Critique mentions at least one edge case or variant state",
+        "Critique is appropriate for a pre-handoff stage as specified in the prompt"
+      ]
+    }
+  ]
+}

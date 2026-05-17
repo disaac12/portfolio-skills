@@ -1,0 +1,46 @@
+{
+  "skill_name": "user-story",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Can you write a user story for a care manager searching for specific improvement actions by keyword on the quality gaps page? They need to be able to type into a search bar and filter the list of actions in real time. The search should match against the action title and the care plan section it came from.",
+      "expected_output": "A fully structured story with all required sections: Background/Context, Problem, Impact, Proposed Solution, User Story (Mike Cohn format with specific role 'care manager'), Acceptance Criteria (bulleted, not Gherkin, present tense), and QA Test Scenarios. The User Story should name 'care manager' not 'user'. AC should cover: search field visibility, real-time filtering, matching against title and section, empty search results state, and clearing the search.",
+      "files": [],
+      "expectations": [
+        "Output includes all required sections: Background, Problem, Impact, Proposed Solution, User Story, Acceptance Criteria, QA Scenarios",
+        "User Story uses 'care manager' as the role, not generic 'user'",
+        "User Story follows the Mike Cohn format: As a / when / I want / so that",
+        "Acceptance Criteria is bulleted functional requirements, not Gherkin",
+        "AC includes an empty/no-results state",
+        "QA Scenarios are numbered with step-by-step actions"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need a dev-ready ticket for the empty state when a care service has no improvement actions yet. This shows up when a care manager first logs in after setup, before any quality gaps have been identified. The team's debating whether to show a generic 'nothing here yet' message or something more contextual that explains what improvement actions are and how they get generated.",
+      "expected_output": "A fully structured story. The Problem and Impact sections should acknowledge the open question about messaging strategy. The Proposed Solution should pick a direction or present both options clearly. The Open Questions section should capture the unresolved decision about message content. AC should cover the empty state display, what triggers it, and what happens when the first action appears.",
+      "files": [],
+      "expectations": [
+        "Output includes all required sections: Background, Problem, Impact, Proposed Solution, User Story, Acceptance Criteria, QA Scenarios",
+        "Open Questions section is present and captures the messaging decision",
+        "AC covers the trigger condition for showing the empty state",
+        "AC or QA covers the transition out of the empty state (when the first action appears)",
+        "User Story uses a specific role (care manager or similar), not generic 'user'"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Write me a story for filtering quality gaps by category and severity. Care managers need to be able to narrow down the list — there could be hundreds of gaps across a large service. Category options are: Medication, Personal Care, Nutrition, Safety, Documentation. Severity is: High, Medium, Low. Filters should be combinable and there should be a clear way to reset them.",
+      "expected_output": "A fully structured story. Problem section should articulate the challenge of managing large volumes of gaps without filtering. AC should cover: filter panel or inline filter visibility, all category and severity options, combining multiple filters, the results count updating when filters apply, a clear reset/clear all affordance, and the empty state when filter combination returns no results.",
+      "files": [],
+      "expectations": [
+        "Output includes all required sections: Background, Problem, Impact, Proposed Solution, User Story, Acceptance Criteria, QA Scenarios",
+        "AC lists all category options or references them as a group",
+        "AC covers combined filter behaviour (not just single-filter)",
+        "AC covers the reset/clear filter action",
+        "AC covers empty state when no gaps match the filter",
+        "QA scenarios include at least one multi-filter test case"
+      ]
+    }
+  ]
+}
